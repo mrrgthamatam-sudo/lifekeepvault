@@ -1,0 +1,212 @@
+@import "tailwindcss";
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+* { scroll-behavior: smooth; }
+
+::selection {
+  background-color: #0d9488;
+  color: #fff;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #0d9488; }
+
+@keyframes gentle-glow {
+  0%, 100% { box-shadow: 0 0 12px rgba(13, 148, 136, 0.08); }
+  50% { box-shadow: 0 0 20px rgba(13, 148, 136, 0.18); }
+}
+.gentle-glow { animation: gentle-glow 5s ease-in-out infinite; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+.float-slow { animation: float 6s ease-in-out infinite; }
+
+.card-peaceful { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card-peaceful:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+
+/* ─── WHITE THEME: Override all dark backgrounds ─── */
+
+/* Main app container */
+.app-bg {
+  background: #ffffff !important;
+  color: #1e293b !important;
+}
+
+/* Header */
+.app-bg header {
+  background: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+/* Footer */
+.app-bg footer {
+  background: #f8fafc !important;
+  border-top: 1px solid #e2e8f0 !important;
+  color: #64748b !important;
+}
+
+/* Tab bar */
+.app-bg header > div:last-child {
+  border-top-color: #e2e8f0 !important;
+}
+
+/* All sections */
+.app-bg section {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+/* Section headers */
+.app-bg section > div[class*="bg-zinc-900"],
+.app-bg section > button {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Cards inside sections */
+.app-bg [class*="bg-zinc-900"],
+.app-bg [class*="bg-zinc-950"],
+.app-bg [class*="bg-black"] {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #1e293b !important;
+}
+
+/* Deeper nested cards */
+.app-bg main [class*="bg-white/5"],
+.app-bg main [class*="bg-white/10"] {
+  background: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* All text colors to dark */
+.app-bg [class*="text-zinc-"],
+.app-bg [class*="text-slate-"],
+.app-bg [class*="text-white"] {
+  color: #1e293b !important;
+}
+
+/* Keep accent colors */
+.app-bg [class*="text-teal"] { color: #0d9488 !important; }
+.app-bg [class*="text-emerald"] { color: #059669 !important; }
+.app-bg [class*="text-red"] { color: #dc2626 !important; }
+.app-bg [class*="text-amber"] { color: #d97706 !important; }
+.app-bg [class*="text-cyan"] { color: #0891b2 !important; }
+.app-bg [class*="text-blue"] { color: #2563eb !important; }
+.app-bg [class*="text-rose"] { color: #e11d48 !important; }
+
+/* Labels */
+.app-bg label {
+  color: #475569 !important;
+}
+
+/* Input fields — white with border */
+.app-bg main input[type="text"],
+.app-bg main input[type="number"],
+.app-bg main input[type="email"],
+.app-bg main input[type="tel"],
+.app-bg main textarea {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #d1d5db !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  font-weight: 500;
+}
+.app-bg main input::placeholder,
+.app-bg main textarea::placeholder {
+  color: #9ca3af !important;
+  font-weight: 400;
+}
+.app-bg main select {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 1px solid #d1d5db !important;
+  font-weight: 500;
+}
+.app-bg main select option {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+.app-bg main input:focus, .app-bg main select:focus, .app-bg main textarea:focus {
+  box-shadow: 0 0 0 2px rgba(13, 148, 136, 0.2) !important;
+  border-color: #0d9488 !important;
+}
+.app-bg main input[type="password"] {
+  background: #f1f5f9 !important;
+  color: #d97706 !important;
+  border: 1px solid #d1d5db !important;
+  font-weight: 600;
+}
+.app-bg main input:disabled, .app-bg main select:disabled {
+  background: #f1f5f9 !important;
+  color: #64748b !important;
+}
+
+/* Buttons — keep colored ones, fix neutral ones */
+.app-bg button[class*="bg-zinc"],
+.app-bg button[class*="bg-slate"] {
+  background: #f1f5f9 !important;
+  border-color: #d1d5db !important;
+  color: #374151 !important;
+}
+.app-bg button[class*="bg-zinc"]:hover,
+.app-bg button[class*="bg-slate"]:hover {
+  background: #e2e8f0 !important;
+}
+
+/* Attachment bar */
+.app-bg [class*="bg-zinc-950/60"] {
+  background: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Metric cards on dashboard */
+.app-bg .card-peaceful {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+/* Collapsible record headers */
+.app-bg button[class*="hover:bg-zinc"],
+.app-bg button[class*="hover:bg-slate"] {
+  color: #1e293b !important;
+}
+.app-bg button[class*="hover:bg-zinc"]:hover,
+.app-bg button[class*="hover:bg-slate"]:hover {
+  background: #f1f5f9 !important;
+}
+
+/* Range inputs */
+.app-bg input[type="range"] {
+  accent-color: #0d9488;
+}
+
+/* Checkbox */
+.app-bg input[type="checkbox"] {
+  accent-color: #0d9488;
+}
+
+/* Login page — keep dark theme for contrast */
+.login-bg {
+  background: linear-gradient(180deg, #0a0f1a 0%, #0c1422 50%, #0a1018 100%) !important;
+  color: #e2e8f0 !important;
+}
+
+/* Print */
+@media print {
+  header, footer, button { display: none !important; }
+  section { break-inside: avoid; }
+}
